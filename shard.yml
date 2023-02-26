@@ -1,0 +1,9 @@
+name: matrix-cr
+version: 0.1.0
+
+authors:
+  - ngng628
+
+crystal: 1.7.2
+
+license: The 2-Clause BSD License

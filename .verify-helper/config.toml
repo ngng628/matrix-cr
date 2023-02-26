@@ -1,0 +1,5 @@
+[languages.cr]
+compile = "crystal build {path} -o {tempdir}/a.out --release --no-debug"
+execute = "{tempdir}/a.out"
+# bundle = "bin/cr-bundle {path} -f"
+# list_dependencies = "bin/cr-bundle {path} -d"

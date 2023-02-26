@@ -1,0 +1,26 @@
+
+
+
+
+# ==== How to write commit message ====
+# :emoji: Commit Message
+#
+
+
+# ==== Prefix ====
+# 🎉  :tada:            First Commit
+# 🔖  :bookmark:        Release/Version Tag
+# ✨  :sparkles:        Features
+# 🐛  :bug:             Fix Bugs
+# 🔧  :wrench:          Config
+# ♻️   :recycle:         Refactoring
+# 💬  :speech_balloon:  Add Comment
+# 📚  :books:           Add Document
+# 🎨  :art:             UI/UX
+# ⚡  :zap:             Improve performance
+# 💩  :hankey:          dirty
+# 🚚  :truck:           move files/directories
+# 🔥  :fire:            remove files/directories
+# ✏️  :pencil2:         typo
+# 🚧  :construction:    wip
+# 🙈  :see_no_evil:     .gitignore

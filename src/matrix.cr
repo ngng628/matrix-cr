@@ -359,6 +359,56 @@ class Matrix(T)
     true
   end
 
+  def sweep(extended? : Bool = false) : Int32
+    a = clone
+    h = @row_size
+    w = @column_size
+    rank = 0
+    @column_size.times do |j|
+      break if extended? && j == w - 1
+
+      pivot = -1
+      mx = T.zero
+      (rank...h).each do |i|
+        if mx < a[i, j].abs
+          mx = a[i, j].abs
+          pivot = i
+        end
+      end
+      next if pivot == -1
+
+      a.swap_row(pivot, rank)
+
+      fac = a[rank, j]
+
+      w.times do |k|
+        if fac.is_a? Float
+          a[rank, k] /= fac
+        else
+          a[rank, k] //= fac
+        end
+      end
+
+      h.times do |i|
+        if i != rank && a[i, j].abs > T.zero
+          fac = a[i, j]
+          w.times do |k|
+            a[i, k] -= a[rank, k] * fac
+          end
+        end
+      end
+      rank += 1
+    end
+
+    h.times do |i|
+      w.times do |j|
+        self[i, j] = a[i, j]
+      end
+    end
+
+    rank
+  end
+
   def det
     raise DimensionMismatch.new if @row_size != @column_size
     n = @row_size
